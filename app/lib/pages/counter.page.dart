@@ -10,17 +10,19 @@ class CounterPage extends StatefulWidget {
 class _CounterPageState extends State<CounterPage> {
   int counter = 0;
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-            title: Text("Counter",style: TextStyle(color :Theme.of(context).indicatorColor)),
-          backgroundColor: Theme.of(context).primaryColor,
+      appBar: AppBar(
+        title: Text(
+          "Counter",
+          style: TextStyle(color: Theme.of(context).indicatorColor),
         ),
+        backgroundColor: Theme.of(context).primaryColor,
+      ),
       body: Center(
         child: Text(
-          "Counter value = > $counter",
+          "Counter value => $counter",
           style: Theme.of(context).textTheme.displayMedium,
         ),
       ),
@@ -28,23 +30,23 @@ class _CounterPageState extends State<CounterPage> {
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
           FloatingActionButton(
-            child: Icon(Icons.add),
+            heroTag: 'increment',
             onPressed: () {
               setState(() {
-                ++this.counter;
+                counter++;
               });
             },
+            child: const Icon(Icons.add),
           ),
-          SizedBox(
-            width: 10,
-          ),
+          const SizedBox(width: 10),
           FloatingActionButton(
-            child: Icon(Icons.remove),
+            heroTag: 'decrement',
             onPressed: () {
-             setState(() {
-               --this.counter;
-             });
+              setState(() {
+                counter--;
+              });
             },
+            child: const Icon(Icons.remove),
           ),
         ],
       ),
