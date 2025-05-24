@@ -6,9 +6,19 @@ class MyHeaderDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DrawerHeader(
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          colors: [
+            Colors.white,
+            Theme.of(context).primaryColor,
+          ],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+        ),
+      ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
+        children: const [
           CircleAvatar(
             backgroundImage: AssetImage("images/img.png"),
             radius: 50,
@@ -18,14 +28,6 @@ class MyHeaderDrawer extends StatelessWidget {
             radius: 30,
           ),
         ],
-      ),
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          colors: [Colors.white, Theme
-              .of(context)
-              .primaryColor
-          ],
-        ),
       ),
     );
   }
