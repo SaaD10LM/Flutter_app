@@ -1,11 +1,10 @@
+import 'package:flutter/material.dart';
 import 'package:app/pages/home.page.dart';
 import 'package:app/pages/chat.page.dart';
 import 'package:app/pages/counter.page.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -14,18 +13,21 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false, // Optional: remove debug banner
+      initialRoute: '/', // Explicitly set initial route
       routes: {
-        "/" : (context)=>HomePage(),
-        "/counter" : (context)=>CounterPage(),
-        "/chat" : (context)=>ChatPage(),
-
+        '/': (context) => const HomePage(),
+        '/counter': (context) => const CounterPage(),
+        '/chat': (context) => const ChatPage(),
       },
       theme: ThemeData(
-        textTheme: TextTheme(bodyLarge: TextStyle(fontSize: 33)),
+        textTheme: const TextTheme(
+          bodyLarge: TextStyle(fontSize: 33),
+        ),
         indicatorColor: Colors.white,
         colorScheme: ColorScheme.fromSeed(
           seedColor: Colors.teal,
-          primary: Colors.teal,
+          brightness: Brightness.light,
         ),
       ),
     );
