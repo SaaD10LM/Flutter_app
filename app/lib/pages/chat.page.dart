@@ -7,11 +7,13 @@ class ChatPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Chat"
-            ,style: TextStyle(color :Theme.of(context).indicatorColor)),
-        backgroundColor: Theme.of(context).primaryColor,
+        title: Text(
+          "Chat",
+          style: TextStyle(color: Theme.of(context).indicatorColor),
+        ),
+        backgroundColor:Theme.of(context).primaryColor,
       ),
-      body: Center(
+      body: const Center(
         child: Text("Chat Page"),
       ),
     );
