@@ -7,14 +7,20 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: MyCutsomDrawer(),
+      drawer: const MyCustomDrawer(),
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.primary,
-        title: Text("Home", style: TextStyle(color: Colors.white)),
+        title: const Text(
+          "Home",
+          style: TextStyle(color: Colors.white),
+        ),
       ),
       body: Center(
-        child: Text("Home Page", style: Theme.of(context).textTheme.bodyLarge),
+        child: Text(
+          "Home Page",
+          style: Theme.of(context).textTheme.bodyLarge,
+        ),
       ),
-    ); // <-- This closing parenthesis was the main bug
+    );
   }
 }
